@@ -1,19 +1,30 @@
-
-    <div id="footer-sec">
-        &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+<!--==============================footer=================================-->
+<footer>
+  <div class="main">
+    <div class="footer-bg">
+    <?php echo $row['FOOTER'] ?>
+      <ul class="list-services">
+        <li><a class="tooltips" href="<?php echo $row['FACEBOOK'] ?>"></a></li>
+        <li class="item-1"><a class="tooltips" href="<?php echo $row['TWITTER'] ?>"></a></li>
+      </ul>
     </div>
-    <!-- /. FOOTER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-       <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
-    
-
-
+  </div>
+</footer>
+<script>Cufon.now();</script>
+<script>
+$(window).load(function () {
+    $('.slider')._TMS({
+        duration: 800,
+        easing: 'easeOutQuart',
+        preset: 'simpleFade',
+        slideshow: 7000,
+        banners: false,
+        pauseOnHover: true,
+        waitBannerAnimation: false,
+        prevBu: '.prev',
+        nextBu: '.next'
+    });
+});
+</script>
 </body>
 </html>
