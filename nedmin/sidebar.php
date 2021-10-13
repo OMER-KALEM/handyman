@@ -18,6 +18,10 @@
             <li>
                 <a href="ayarlar.php"><i class="fa fa-dashboard "></i>AYARLAR</a>
             </li>
+            <li>
+                <!-- <a href="menutransaction/menus.php"><i class="fa fa-dashboard "></i>MENULER</a> -->
+                <a href="menus.php"><i class="fa fa-dashboard "></i>MENULER</a>
+            </li>
         </ul>
     </div>
 </nav>

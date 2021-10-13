@@ -225,10 +225,16 @@ h1 a {
 	width:58px;
 	text-indent:-9999px;
 	background:url(../images/menu-home-icon.png) center center no-repeat #2b2b2b;
-	border-radius:9px 0 0 9px;
+	border-radius:90px 0 0 90px;
 	-moz-border-radius:9px 0 0 9px;
 	-webkit-border-radius:9px 0 0 9px;
 }
+.menu li:last-child a {
+	padding:6px 64px 8px 62px;
+	border-radius:0 9px 9px 0;
+	-moz-border-radius:0 9px 9px 0;
+	-webkit-border-radius:0 9px 9px 0;
+} 
 .menu li.last a {
 	padding:6px 64px 8px 62px;
 	border-radius:0 9px 9px 0;

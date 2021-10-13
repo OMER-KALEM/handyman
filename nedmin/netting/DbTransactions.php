@@ -44,4 +44,44 @@ if (isset($_POST['login'])) {
         header("Location: ../login.php?login=no");
     }
 }
+
+if (isset($_POST['addMenu'])) {
+
+    $AddMenu = $conn->query("INSERT INTO DASH_MENU_ITEM (SCREEN_NAME,URL) 
+        VALUES('" . $_POST['screenName'] . "','" . $_POST['url'] . "') ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../addMenu.php?status=ok");
+    } else {
+        header("Location: ../addMenu.php?status=notok");
+    }
+}
+
+if (isset($_POST['editMenu'])) {
+
+    $menuId = $_POST['menuId'];
+    $updatedRows = $conn->query("UPDATE DASH_MENU_ITEM SET 
+        SCREEN_NAME='" . $_POST['screenName'] . "',
+        URL='" . $_POST['url'] . "'
+
+        where ID= '$menuId'
+    ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../editMenu.php?status=ok&menuId=$menuId");
+    } else {
+        header("Location: ../editMenu.php?status=notok&menuId=$menuId");
+    }
+}
+
+if (isset($_GET['deleteMenu'])) {
+
+    $deletedRow = $conn->query("DELETE FROM DASH_MENU_ITEM WHERE ID='" . $_GET['menuId'] . "'");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../menus.php?status=ok");
+    } else {
+        header("Location: ../menus.php?status=notok");
+    }
+}
 ?>
