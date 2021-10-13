@@ -1,4 +1,11 @@
-<?php include "header.php"?>
-<?php include "sidebar.php"?>
-<?php include "indexPageInner.php"?>
-<?php include "footer.php"?>
+<?php
+include "header.php";
+include "sidebar.php";
+
+if (!isset($_SESSION["UserName"])) {
+    header('Location: login.php');
+}
+
+include "indexPageInner.php";
+include "footer.php";
+?>

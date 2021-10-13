@@ -1,36 +1,36 @@
-<?php include "header.php"?>
-<?php include "sidebar.php"?>
+<?php include "header.php" ?>
+<?php include "sidebar.php" ?>
 
 
-    <div id="page-wrapper">
-        <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-head-line">SITE GENEL AYARLARI</h1>
-<?php
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">SITE GENEL AYARLARI</h1>
+                <?php
 
 
 
-$updateInfo="";
-$updateInfoColor="black";
-if ($_GET['status'] == "ok") {
-    $updateInfo = "İsleminiz gerceklesmistir";
-    $updateInfoColor ="green";
-} elseif ($_GET['status'] == "notok") {
-    $updateInfo = "Olmadı bir daha";
-    $updateInfoColor = "red";
-} elseif ($_GET['status'] == "") {
-    $updateInfo = "Sitenizin genel ayarlarının yapıldığı yer";
-}else {
-    $updateInfo = "Sıçtık";
-}
-?>
+                $updateInfo = "";
+                $updateInfoColor = "black";
+                if ($_GET['status'] == "ok") {
+                    $updateInfo = "İsleminiz gerceklesmistir";
+                    $updateInfoColor = "green";
+                } elseif ($_GET['status'] == "notok") {
+                    $updateInfo = "Olmadı bir daha";
+                    $updateInfoColor = "red";
+                } elseif ($_GET['status'] == "") {
+                    $updateInfo = "Sitenizin genel ayarlarının yapıldığı yer";
+                } else {
+                    $updateInfo = "Sıçtık";
+                }
+                ?>
 
-                    <h1 class="page-subhead-line" style="color :<?php echo $updateInfoColor ?>" > <?php echo $updateInfo ?> </h1>
-                </div>
+                <h1 class="page-subhead-line" style="color :<?php echo $updateInfoColor ?>"> <?php echo $updateInfo ?> </h1>
             </div>
+        </div>
 
-            <form action = "netting/DbTransactions.php" method="POST">
+        <form action="netting/DbTransactions.php" method="POST">
             <div class="form-group col-md-12">
                 <div class="form-group col-md-6">
                     <label>Site basligi</label>
@@ -40,7 +40,7 @@ if ($_GET['status'] == "ok") {
 
             <div class="form-group col-md-12">
                 <div class="form-group col-md-6">
-                    <label>Site basligi</label>
+                    <label>Site aciklama</label>
                     <input class="form-control" type="text" name="description" value="<?php echo $row['DESCRIPTION'] ?>">
                 </div>
             </div>
@@ -101,7 +101,7 @@ if ($_GET['status'] == "ok") {
                 </div>
             </div>
 
-            </form>
-        </div>
+        </form>
     </div>
-<?php include "footer.php"?>
+</div>
+<?php include "footer.php" ?>
