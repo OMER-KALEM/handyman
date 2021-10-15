@@ -22,6 +22,9 @@
                 <!-- <a href="menutransaction/menus.php"><i class="fa fa-dashboard "></i>MENULER</a> -->
                 <a href="menus.php"><i class="fa fa-dashboard "></i>MENULER</a>
             </li>
+            <li>
+                <a href="slider.php"><i class="fa fa-dashboard "></i>SLİDER</a>
+            </li>
         </ul>
     </div>
 </nav>

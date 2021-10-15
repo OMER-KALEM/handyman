@@ -4,14 +4,13 @@ include "sidebar.php";
 $menuId = $_GET['menuId'];
 $result = $conn->query("SELECT * FROM DASH_MENU_ITEM WHERE ID='$menuId'");
 $selectedMenu = $result->fetch_assoc();
-
 ?>
 
 <div id="page-wrapper">
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">MENU EKLEME</h1>
+                <h1 class="page-head-line">MENU DUZENLEME</h1>
 
                 <?php
                 $updateInfo = "";
@@ -48,7 +47,11 @@ $selectedMenu = $result->fetch_assoc();
             <div class="col-md-12">
                 <div class="form-group col-md-6">
                     <label>Menü Linki</label>
-                    <input class="form-control" type="text" name="url" value="<?php if ($selectedMenu['URL']=="") {echo "http://";}else{echo $selectedMenu['URL'];} ?>" placeholder="Menü Linki Giriniz">
+                    <input class="form-control" type="text" name="url" value="<?php if ($selectedMenu['URL'] == "") {
+                                                                                    echo "http://";
+                                                                                } else {
+                                                                                    echo $selectedMenu['URL'];
+                                                                                } ?>" placeholder="Menü Linki Giriniz">
                 </div>
             </div>
         </form>
