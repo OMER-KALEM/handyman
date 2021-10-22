@@ -25,6 +25,9 @@
             <li>
                 <a href="slider.php"><i class="fa fa-dashboard "></i>SLİDER</a>
             </li>
+            <li>
+                <a href="pages.php"><i class="fa fa-dashboard "></i>SAYFALAR</a>
+            </li>
         </ul>
     </div>
 </nav>

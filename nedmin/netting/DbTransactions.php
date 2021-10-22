@@ -127,4 +127,44 @@ if (isset($_GET['deleteSlider'])) {
         header("Location: ../slider.php?status=notok");
     }
 }
+
+if (isset($_POST['addPage'])) {
+    $mainscreenchxbox = $_POST['IsMainScreen'];
+    $AddPage = $conn->query("INSERT INTO DASH_PAGE_ITEM (PAGE_NAME,CONTENT,LIST_ORDER,IS_MAIN_SCREEN) 
+        VALUES('" . $_POST['screenName'] . "','" . $_POST['content'] . "','" . $_POST['listOrder'] . "',b'" . $_POST['IsMainScreen'] . "') ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../pages.php?status=ok&mainscrn=$mainscreenchxbox");
+    } else {
+        header("Location: ../pages.php?status=notok&mainscrn=$mainscreenchxbox");
+    }
+}
+
+if (isset($_GET['deletePage'])) {
+    $deletedRow = $conn->query("DELETE FROM DASH_PAGE_ITEM WHERE ID='" . $_GET['pageId'] . "'");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../pages.php?status=ok");
+    } else {
+        header("Location: ../pages.php?status=notok");
+    }
+}
+
+if (isset($_POST['editPage'])) {
+    $pageId = $_POST['pageId'];
+    $updatedRows = $conn->query("UPDATE DASH_PAGE_ITEM SET 
+        PAGE_NAME='" . $_POST['pageName'] . "',
+        CONTENT='" . $_POST['content'] . "',
+        LIST_ORDER='" . $_POST['listOrder'] . "',
+        IS_MAIN_SCREEN=b'" . $_POST['IsMainScreen'] . "'
+
+        where ID= '$pageId'
+    ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../editPage.php?status=ok&menuId=$pageId");
+    } else {
+        header("Location: ../editPage.php?status=notok&menuId=$pageId");
+    }
+}
 ?>
