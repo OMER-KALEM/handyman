@@ -52,7 +52,7 @@ $row = $result->fetch_assoc()
 
           <nav>
             <ul class="menu">
-              <li><a class="active" href="index.html">Home</a></li>
+              <li><a class="active" href="index.php">Home</a></li>
 
               <?php
               $result = $conn->query("SELECT * FROM DASH_MENU_ITEM");
@@ -61,28 +61,14 @@ $row = $result->fetch_assoc()
               while ($row = $result->fetch_assoc()) {
                 $say++;
               ?>
-                <li class="<?php if ($menuSay == $say) {echo "last";}?>"><a href="<?php echo $row['URL']; ?>" target="_blank"><?php echo $row['SCREEN_NAME']; ?></a></li>
+                <li class="<?php if ($menuSay == $say) {
+                              echo "last";
+                            } ?>"><a href="<?php echo $row['URL']; ?>" target="_blank"><?php echo $row['SCREEN_NAME']; ?></a></li>
               <?php }
               ?>
 
             </ul>
           </nav>
         </div>
-        <div class="wrapper">
-          <div class="slider">
-            <ul class="items">
-              
-              <?php 
-                $result = $conn->query("SELECT * FROM SLIDER ORDER BY LIST_ORDER ASC");
-                while ($row = $result->fetch_assoc()) {
-              ?>
-                <li><img src="nedmin/<?php echo $row['IMG_URL']; ?>" alt="<?php echo $row['IMG_NAME']; ?>"></li>
-              <?php }
-              ?>
-            </ul>
-          </div>
-          <a class="prev">prev</a> <a class="next">next</a>
-          <div class="banner1-bg"></div>
-          <div class="banner-1"></div>
-        </div>
+
       </header>
