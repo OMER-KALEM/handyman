@@ -122,6 +122,8 @@ if (isset($_GET['deleteSlider'])) {
     $deletedRow = $conn->query("DELETE FROM SLIDER WHERE ID='" . $_GET['sliderId'] . "'");
 
     if ($conn->affected_rows > 0) {
+        $deleteImgUrl = $_GET['deleteImgUrl'];
+        unlink("../$deleteImgUrl");
         header("Location: ../slider.php?status=ok");
     } else {
         header("Location: ../slider.php?status=notok");

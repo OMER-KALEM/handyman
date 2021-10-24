@@ -69,7 +69,7 @@ include "sidebar.php";
             </div>
             <div class="col-md-12">
                 <div class="form-group col-md-6">
-                    <label>Slider Linki</label>
+                    <label>Slider Sırası</label>
                     <input class="form-control" type="number" name="sliderOrder" placeholder="Slider Sırasını Giriniz">
                 </div>
             </div>

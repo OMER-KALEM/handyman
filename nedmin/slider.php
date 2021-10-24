@@ -51,7 +51,7 @@ if (!isset($_SESSION["UserName"])) {
                                             <td><?php echo $getMenus['URL']; ?></td>
                                             <td><?php echo $getMenus['LIST_ORDER']; ?></td>
                                             <td><a href="editSlider.php?sliderId=<?php echo $getMenus['ID'] ?>"><button class="btn btn-primary">Duzenle</button></a></td>
-                                            <td><a href="netting/DbTransactions.php?sliderId=<?php echo $getMenus['ID'] ?>&deleteSlider=ok"><button class="btn btn-danger">Sil</button></a></td>
+                                        <td><a href="netting/DbTransactions.php?sliderId=<?php echo $getMenus['ID'] ?>&deleteSlider=ok&deleteImgUrl=<?php echo $getMenus['IMG_URL'] ?>"><button class="btn btn-danger">Sil</button></a></td>
                                         </tr>
                                     </tbody>
                                 <?php } ?>
