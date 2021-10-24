@@ -1,8 +1,10 @@
 <?php
 include 'netting/DbConnect.php';
+include 'functions.php';
 
 $result = $conn->query("SELECT * FROM ayarlar");
-$row = $result->fetch_assoc()
+$row = $result->fetch_assoc();
+LogInControl();
 ?>
 
 <!DOCTYPE html>
