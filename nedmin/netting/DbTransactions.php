@@ -80,7 +80,7 @@ if (isset($_GET['deleteMenu'])) {
 }
 
 if (isset($_POST['addSlider'])) {
-    $uploads_dir = "../uploads";
+    $uploads_dir = "../uploads/sliders";
     @$tmp_name = $_FILES["sliderImgFile"]["tmp_name"];
     @$name = $_FILES["sliderImgFile"]["name"];
     $uniqueNumber1 = rand(20000, 32000);
@@ -169,4 +169,53 @@ if (isset($_POST['editPage'])) {
         header("Location: ../editPage.php?status=notok&menuId=$pageId");
     }
 }
+
+
+if (isset($_GET['deleteNew'])) {
+    $deletedRow = $conn->query("DELETE FROM DASH_NEW_ITEM WHERE ID='" . $_GET['newId'] . "'");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../news.php?status=ok");
+    } else {
+        header("Location: ../news.php?status=notok");
+    }
+}
+
+
+if (isset($_POST['addNew'])) {
+    $uploads_dir = "../uploads/news";
+    @$tmp_name = $_FILES["newImgFile"]["tmp_name"];
+    @$name = $_FILES["newImgFile"]["name"];
+    $uniqueNumber1 = rand(20000, 32000);
+    $uniqueNumber2 = rand(20000, 32000);
+    $uniqueNumber3 = rand(20000, 32000);
+    $uniqueNumber4 = rand(20000, 32000);
+    $uniqueName = $uniqueNumber1 . $uniqueNumber2 . $uniqueNumber3 . $uniqueNumber4;
+    $refImgUrl = substr($uploads_dir, 3) . "/" . $uniqueName . $name;
+    @move_uploaded_file($tmp_name, "$uploads_dir/$uniqueName$name");
+    $addNew = $conn->query("INSERT INTO DASH_NEW_ITEM (NEW_NAME,NEW_CONTENT,IMG_URL) 
+        VALUES('" . $_POST['newName'] . "','" . $_POST['content'] . "','" . $refImgUrl . "') ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../addNew.php?status=ok");
+    } else {
+        header("Location: ../addNew.php?status=notok");
+    }
+}
+
+if (isset($_POST['editNew'])) {
+    $newId = $_POST['newId'];
+    $updatedRows = $conn->query("UPDATE DASH_NEW_ITEM SET 
+        NEW_NAME='" . $_POST['newName'] . "',
+        NEW_CONTENT='" . $_POST['content'] . "'
+        where ID= '$newId'
+    ");
+
+    if ($conn->affected_rows > 0) {
+        header("Location: ../editNew.php?status=ok&newId=$newId");
+    } else {
+        header("Location: ../editNew.php?status=notok&newId=$newId");
+    }
+}
+
 ?>

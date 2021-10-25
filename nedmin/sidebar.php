@@ -28,6 +28,9 @@
             <li>
                 <a href="pages.php"><i class="fa fa-dashboard "></i>SAYFALAR</a>
             </li>
+            <li>
+                <a href="news.php"><i class="fa fa-dashboard "></i>HABERLER</a>
+            </li>
         </ul>
     </div>
 </nav>
