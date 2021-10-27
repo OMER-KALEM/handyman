@@ -5,7 +5,7 @@
         <article class="col-1">
             <div class="indent-left">
                 <h3 class="p1">Bize ulaşın...</h3>
-                <form id="contact-form" action="http://www.emrahyuksel.com.tr/phpmail/index.php" method="post" enctype="multipart/form-data">
+                <form id="contact-form" action="http://www.test.com.tr/phpmail/index.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <label><span class="text-form">Ad Soyad:</span>
                             <input type="text" name="fullName">
