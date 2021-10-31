@@ -28,7 +28,7 @@ $selectedNew = $result->fetch_assoc();
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Haber Dünzeliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

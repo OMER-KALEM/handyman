@@ -20,7 +20,7 @@ include "sidebar.php";
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Sitenize Slider Ekliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

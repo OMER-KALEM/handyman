@@ -28,7 +28,7 @@ $selectedPage = $result->fetch_assoc();
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Sayfanızı Dünzeliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

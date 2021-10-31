@@ -21,7 +21,7 @@ include "sidebar.php";
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Sitenize Menü Ekliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

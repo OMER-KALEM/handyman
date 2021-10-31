@@ -1,7 +1,7 @@
 <?php
 include 'nedmin/netting/DbConnect.php';
 
-$result = $conn->query("SELECT * FROM ayarlar");
+$result = $conn->query("SELECT * FROM SETTINGS");
 $row = $result->fetch_assoc()
 ?>
 

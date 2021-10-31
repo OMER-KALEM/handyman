@@ -2,7 +2,7 @@
 include 'netting/DbConnect.php';
 include 'functions.php';
 
-$result = $conn->query("SELECT * FROM ayarlar");
+$result = $conn->query("SELECT * FROM SETTINGS");
 $row = $result->fetch_assoc();
 LogInControl();
 ?>

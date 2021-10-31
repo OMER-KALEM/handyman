@@ -3,7 +3,7 @@ include "DbConnect.php";
 
 if (isset($_POST['saveSettings'])) {
     $id = 0; //Tek bir elemanım olacak zaten
-    $updatedRows = $conn->query("UPDATE ayarlar SET 
+    $updatedRows = $conn->query("UPDATE SETTINGS SET 
         TITLE='" . $_POST['title'] . "',
         DESCRIPTION='" . $_POST['description'] . "',
         KEYWORDS='" . $_POST['keywords'] . "',
@@ -19,9 +19,9 @@ if (isset($_POST['saveSettings'])) {
     ");
 
     if ($conn->affected_rows > 0) {
-        header("Location: ../ayarlar.php?status=ok");
+        header("Location: ../settings.php?status=ok");
     } else {
-        header("Location: ../ayarlar.php?status=notok");
+        header("Location: ../settings.php?status=notok");
     }
 }
 

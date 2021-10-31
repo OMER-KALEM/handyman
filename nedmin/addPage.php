@@ -25,7 +25,7 @@ include "sidebar.php";
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Sitenize Sayfa Ekliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

@@ -24,7 +24,7 @@ $selectedMenu = $result->fetch_assoc();
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Menünüzü Dünzeliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 

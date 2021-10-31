@@ -24,7 +24,7 @@ $selectedSlider = $result->fetch_assoc();
                 } elseif ($_GET['status'] == "") {
                     $updateInfo = "Sliderinizi Dünzeliyorsunuz";
                 } else {
-                    $updateInfo = "Sıçtık";
+                    $updateInfo = "hata";
                 }
                 ?>
 
