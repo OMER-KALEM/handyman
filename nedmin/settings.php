@@ -1,6 +1,8 @@
 <?php
 include "header.php";
 include "sidebar.php";
+
+AuthorizationControlForAdmin();
 ?>
 
 <div id="page-wrapper">

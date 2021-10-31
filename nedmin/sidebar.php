@@ -15,11 +15,21 @@
             <li>
                 <a class="active-menu" href="index.php"><i class="fa fa-dashboard "></i>ANA SAYFA</a>
             </li>
+
+            <?php
+            $userName = $_SESSION["UserName"];
+            $result = $conn->query("SELECT * FROM ADMIN WHERE USER_NAME='$userName'");
+            $admin = $result->fetch_assoc();
+            if ($admin['AUTHORIZATION'] == '1') {
+            ?>
+
+                <li>
+                    <a href="settings.php"><i class="fa fa-dashboard "></i>AYARLAR</a>
+                </li>
+
+            <?php } ?>
+
             <li>
-                <a href="ayarlar.php"><i class="fa fa-dashboard "></i>AYARLAR</a>
-            </li>
-            <li>
-                <!-- <a href="menutransaction/menus.php"><i class="fa fa-dashboard "></i>MENULER</a> -->
                 <a href="menus.php"><i class="fa fa-dashboard "></i>MENULER</a>
             </li>
             <li>
