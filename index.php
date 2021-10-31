@@ -1,4 +1,5 @@
 <?php
+#i renamed repository, now i try to commit
 include "header.php";
 include "slider.php";
 ?>
